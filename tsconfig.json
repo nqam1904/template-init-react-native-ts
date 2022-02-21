@@ -11,25 +11,13 @@
 		"moduleResolution": "node",
 		"noEmit": true,
 		"strict": true,
-		"baseUrl": "./src/",
+		"baseUrl": ".",
 		"paths": {
-			"api/*": ["api/*"],
-			"action/*": ["redux/action/*"],
-			"saga": ["redux/saga/"],
-			"reducer": ["redux/reducer/"],
-			"store": ["redux/store/"],
-			"selector/*": ["redux/selector/*"],
-			"utils/*": ["utils/*"],
-			"config/*": ["config/*"],
-			"hooks/*": ["hooks/*"],
-			"assets": ["assets/"],
-			"screens": ["screens/"],
-			"components": ["components/"],
-			"navigation": ["navigation/"],
-			"navigationRef": ["navigation/navigationRef"],
-			"models": ["models/"]
+			"saga": ["src/redux/saga/"],
+			"reducer": ["src/redux/reducer/"],
+			"store": ["src/redux/store/"],
+			
 		}
 	},
-	"include": ["src/**/*"],
 	"exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
