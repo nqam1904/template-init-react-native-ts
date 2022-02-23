@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, Platform } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
@@ -38,7 +38,7 @@ export const screenOptionsNativeStack: any = {
 	gestureEnabled: true,
 	animationTypeForReplace: 'push',
 	animation: 'slide_from_right',
-	presentation: 'modal',
+	presentation: Platform.OS === 'android' ? 'modal' : '',
 }
 
 export const screenOptionsStack: any = {
