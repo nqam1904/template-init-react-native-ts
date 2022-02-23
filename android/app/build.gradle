@@ -2,6 +2,12 @@ apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
 
+project.ext.envConfigFiles = [
+        dev : ".env.dev",
+        prod: ".env.prod"
+]
+// config env project
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
  * and bundleReleaseJsAndAssets).
@@ -134,6 +140,7 @@ android {
         applicationId "com.templateproject"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        resValue "string", "build_config_package", "com.templateproject"
         versionCode 1
         versionName "1.0"
     }
