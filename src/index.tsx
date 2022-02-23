@@ -1,10 +1,10 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import store from './src/redux/store'
-import MainStack from './src/navigation'
+import store from './redux/store'
+import MainStack from './navigation'
 import Config from 'react-native-config'
-const { ENVIRONMENT } = Config
-console.log('ENVIRONMENT', ENVIRONMENT)
+const { APP_ENV } = Config
+console.log('ENVIRONMENT', APP_ENV)
 const App: React.FC = () => {
 	return (
 		<Provider store={store}>

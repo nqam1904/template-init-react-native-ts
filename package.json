@@ -13,8 +13,8 @@
 		"reset-cache": "react-native start --reset-cache",
 		"android-dev": "SET ENVFILE=.env.dev && npx react-native run-android",
 		"android-prod": "SET ENVFILE=.env.prod && npx react-native run-android",
-		"ios-dev": "yarn clean-ios && npx react-native run-ios --scheme HelloWorld-Dev",
-		"ios-prod": "yarn clean-ios && npx react-native run-ios --scheme HelloWorld-Prod"
+		"ios-dev": "npx react-native run-ios --scheme templateProject-Dev",
+		"ios-prod": "npx react-native run-ios --scheme templateProject-Prod"
 	},
 	"dependencies": {
 		"@react-native-masked-view/masked-view": "^0.2.6",

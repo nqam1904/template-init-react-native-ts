@@ -12,7 +12,7 @@ target 'templateProject' do
     :hermes_enabled => true
   )
 
-  pod 'react-native-config', :path => '../node_modules/react-native-config'
+  pod 'react-native-config/Extension', :path => '../node_modules/react-native-config'
 
   target 'templateProjectTests' do
     inherit! :complete
