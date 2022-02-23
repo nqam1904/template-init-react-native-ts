@@ -6,18 +6,32 @@
 		"isolatedModules": true,
 		"jsx": "react-native",
 		"lib": ["es6"],
-		"module": "es6",
-		"target": "es6",
+		"module": "commonjs",
+		"target": "esnext",
 		"moduleResolution": "node",
 		"noEmit": true,
 		"strict": true,
-		"baseUrl": ".",
+		"baseUrl": "./src/",
 		"paths": {
-			"saga": ["src/redux/saga/"],
-			"reducer": ["src/redux/reducer/"],
-			"store": ["src/redux/store/"],
-			
-		}
+			"api/*": ["api/*"],
+			"action/*": ["redux/action/*"],
+			"saga": ["redux/saga/"],
+			"reducer": ["redux/reducer/"],
+			"store": ["redux/store/"],
+			"selector/*": ["redux/selector/*"],
+			"utils/*": ["utils/*"],
+			"config/*": ["config/*"],
+			"hooks/*": ["hooks/*"],
+			"assets": ["assets/"],
+			"screens": ["screens/"],
+			"components": ["components/"],
+			"navigation": ["navigation/"],
+			"navigationRef": ["navigation/navigationRef"],
+			"models": ["models/"]
+		},
+		"resolveJsonModule": true,
+		"noImplicitAny": true
 	},
+	"include": ["src/**/*"],
 	"exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
