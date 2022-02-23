@@ -6,8 +6,6 @@ project.ext.envConfigFiles = [
         dev : ".env.dev",
         prod: ".env.prod"
 ]
-// config env project
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
  * and bundleReleaseJsAndAssets).
@@ -88,6 +86,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -137,12 +136,12 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.templateproject"
+        applicationId project.env.get("ANDROID_APP_ID")
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         resValue "string", "build_config_package", "com.templateproject"
-        versionCode 1
-        versionName "1.0"
+        versionCode project.env.get("ANDROID_APP_VERSION_CODE").toInteger()
+        versionName project.env.get("ANDROID_APP_VERSION_NAME")
     }
     splits {
         abi {
